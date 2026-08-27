@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const benignData = [0.00, 0.08, 0.15, 0.30, 0.83, 0.01, 0.04, 0.00, 0.85, 0.00, 0.00, 0.00, 0.90, 0.00, 0.27, 0.00, 0.02, 0.01, 0.00, 0.70]; //[cite: 8]
   const malignantData = [1.00, 0.92, 0.85, 0.70, 0.18, 0.99, 0.96, 1.00, 0.15, 1.00, 1.00, 1.00, 0.09, 0.99, 0.72, 1.00, 0.98, 0.99, 1.00, 0.30]; //[cite: 8]
   const labels = Array.from({ length: 20 }, (_, i) => `P-${i + 1}`);
-  const imagePaths = Array.from({ length: 20 }, (_, i) => `lungs_img/image${i + 1}-2.jpg`); //[cite: 8]
+  const imagePaths = Array.from({ length: 20 }, (_, i) => `lungs_img/Image${i + 1}-2.jpg`); //[cite: 8]
 
   Chart.defaults.color = "#94a3b8";
   Chart.defaults.font.family = "'Plus Jakarta Sans', sans-serif";
