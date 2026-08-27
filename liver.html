@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liver Cancer Detection | MediScan</title>
+  <link rel="stylesheet" href="prostate.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Global Nav -->
+  <nav>
+    <a href="project.html" class="nav__logo">
+      <i class="ri-pulse-line"></i> Medi<span>Scan</span>
+    </a>
+    <ul class="nav__links">
+      <li class="link"><a href="project.html">Home</a></li>
+      <li class="link"><a href="about.html">About</a></li>
+      <li class="link"><a href="prostate.html">Prostate</a></li>
+      <li class="link"><a href="liver.html"class="active">Liver</a></li>
+      <li class="link"><a href="lung.html">Lung</a></li>
+      <li class="link"><a href="license.html">License</a></li>
+    </ul>
+  </nav>
+
+  <main class="section__container">
+    <!-- Header -->
+    <header class="page-header">
+      <div>
+        <span class="section__badge"><i class="ri-microscope-line"></i> Histopathology Core Analysis</span>
+        <h1 class="section__header">Liver Cancer - Diagnostic Report</h1>
+      </div>
+      <div class="status-pill"><i class="ri-checkbox-circle-fill"></i> Model Telemetry Active</div>
+    </header>
+
+    <!-- Line Chart Section -->
+<section class="dashboard__panel">
+  <div class="panel__topbar">
+    <h3>Cohort Screening Metrics</h3>
+    <span>Model: Hybrid CNN-LSTM</span>
+  </div>
+  <div class="chart-container--line">
+    <canvas id="lineChart"></canvas>
+  </div>
+</section>
+
+<!-- Patient Lookup Section -->
+<section class="dashboard__panel">
+  <div class="panel__topbar">
+    <h3>Patient-wise Probability Analysis</h3>
+    <span>Inference Class: Malignant / Benign</span>
+  </div>
+  <div class="chart__wrapper">
+    <div class="chart__left">
+      <div class="patient-search-box">
+        <label for="patientInput">Select Patient Identifier</label>
+        <input type="number" id="patientInput" min="1" max="20" placeholder="Enter Patient ID (1 - 20)" />
+      </div>
+      <div class="chart-container--pie">
+        <canvas id="pieChart"></canvas>
+      </div>
+    </div>
+
+    <div class="chart__right">
+      <h3 class="yolo__heading">Identified Lesion Coordinates</h3>
+      <div class="image__container">
+        <img id="patientImage" src="" alt="Diagnostic scan analysis" />
+        <div class="image-empty-state" id="emptyStateText">Enter a patient index to retrieve bounding-box overlays.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- W&B Interactive Workspace -->
+    <section class="dashboard__panel">
+      <div class="panel__topbar">
+        <h3>YOLOv5 Dynamic Analysis Panel</h3>
+        <span>Weights & Biases Integration</span>
+      </div>
+      <div class="workspace-embed">
+        <iframe
+          src="https://wandb.ai/debajitdas097-icfai-university-tripura/YOLOv5/reports/Lung-Cancer--VmlldzoxMzYwMjAxNA"
+          allow="fullscreen"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- External Reports -->
+    <section class="external-analysis">
+      <div class="section__badge"><i class="ri-folder-shield-2-line"></i> Deep Learning Assets</div>
+      <h2 class="section__header" style="font-size: 1.6rem; margin-top: 0.25rem;">Research Models & Benchmarks</h2>
+      <div class="reports__grid">
+        <div class="report-card">
+          <div>
+            <h3>YOLOv5 Model Run</h3>
+            <p>Cellular-level object detection logs, hyperparameter tracking, and precision-recall curves hosted on W&B.</p>
+          </div>
+          <a href="https://wandb.ai/debajitdas097-icfai-university-tripura/YOLOv5?nw=nwuserdebajitdas097" target="_blank" class="report-btn">
+            <i class="ri-external-link-line"></i> Open W&B Workspace
+          </a>
+        </div>
+
+        <div class="report-card">
+          <div>
+            <h3>Classification Pipeline (CNN + LSTM)</h3>
+            <p>Validation notebooks containing multi-class feature extraction pipelines and diagnostic score generation.</p>
+          </div>
+          <a href="https://colab.research.google.com/drive/1JcgZyqi5nXJpHtojwtpuMmTupoNwG_s7?usp=sharing" target="_blank" class="report-btn">
+            <i class="ri-file-code-line"></i> View Model Notebook
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Cleaned Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>MediScan Intelligence</h3>
+        <p>Real-time deep learning pipelines providing structured histopathological detection benchmarks.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Quick Navigation</h3>
+        <ul>
+          <li><a href="project.html">Home</a></li>
+          <li><a href="about.html">Architecture Overview</a></li>
+          <li><a href="license.html">Data Governance</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Diagnostic Pipelines</h3>
+        <div class="footer-pills">
+          <a href="prostate.html">Prostate Core</a>
+          <a href="liver.html">Hepatic CT</a>
+          <a href="lung.html">Pulmonary Nodule</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 MediScan Clinical Systems. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/liver-chart.js"></script>
+  <script>
+    // Empty state helper for patient analysis image
+    const input = document.getElementById("patientInput");
+    const img = document.getElementById("patientImage");
+    const emptyState = document.getElementById("emptyStateText");
+
+    if (input) {
+      input.addEventListener("input", () => {
+        if (img.getAttribute("src") && img.getAttribute("src") !== "") {
+          emptyState.style.display = "none";
+        } else {
+          emptyState.style.display = "block";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

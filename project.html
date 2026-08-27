@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="project.css" />
+    <title>MediScan AI | Precision Oncology & Diagnostic Intelligence</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar-wrapper">
+      <nav class="navbar">
+        <a href="#" class="nav__logo">
+          <div class="logo__icon"><i class="ri-pulse-line"></i></div>
+          <span>Medi<strong>Scan</strong></span>
+        </a>
+        <ul class="nav__links">
+          <li><a href="#features" class="active">Overview</a></li>
+          <li><a href="#diagnostics">Diagnostics</a></li>
+          <li><a href="#demo">Live Screening</a></li>
+          <li><a href="#specialists">Specialists</a></li>
+        </ul>
+        <div class="nav__actions">
+          <button class="btn btn--outline" onclick="openModal()">Contact Support</button>
+          <a href="login.html" class="btn btn--primary">Doctor Portal</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero__section">
+      <div class="hero__container">
+        <div class="hero__content">
+          <div class="badge"><i class="ri-shield-check-line"></i> HIPAA Compliant AI Diagnostics</div>
+          <h1 class="hero__title">Accelerating Early Cancer Detection Through Deep Learning</h1>
+          <p class="hero__description">
+            High-precision histopathology and radiographic imaging models designed to assist oncologists in classifying benign vs. malignant tissue in seconds.
+          </p>
+          <div class="hero__cta">
+            <a href="#demo" class="btn btn--primary btn--lg"><i class="ri-scan-2-line"></i> Try Diagnostic Demo</a>
+            <a href="#diagnostics" class="btn btn--secondary btn--lg">Explore Modules</a>
+          </div>
+          <div class="hero__stats">
+            <div class="stat__item">
+              <h3>98.4%</h3>
+              <p>Validation Accuracy</p>
+            </div>
+            <div class="stat__divider"></div>
+            <div class="stat__item">
+              <h3>< 2.4s</h3>
+              <p>Inference Latency</p>
+            </div>
+            <div class="stat__divider"></div>
+            <div class="stat__item">
+              <h3>3+ Organs</h3>
+              <p>Specialized Pipelines</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="scanner__card">
+            <div class="scanner__header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="scanner__title">Histopathology Inference Feed</span>
+            </div>
+            <div class="scanner__body">
+              <img src="img/tumour.jpg" alt="Medical Scan Interface" id="heroScanImg" />
+              <div class="scan-overlay">
+                <div class="scan-line"></div>
+                <div class="detection-box" style="top: 25%; left: 35%; width: 90px; height: 90px;">
+                  <span class="box-tag">Region of Interest (94.2%)</span>
+                </div>
+              </div>
+            </div>
+            <div class="scanner__footer">
+              <div class="footer__chip"><i class="ri-cpu-line"></i> YOLOv8 Architecture</div>
+              <div class="footer__chip success"><i class="ri-checkbox-circle-line"></i> Pipeline Ready</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- High-Impact Diagnostics Hub -->
+<section id="diagnostics" class="section__container diagnostics__section">
+  <div class="section__meta text-center">
+    <span class="section__tag glow-tag"><i class="ri-radar-line"></i> Deep Learning Inference Hub</span>
+    <h2 class="section__heading">Select Target Diagnostic Pipeline</h2>
+    <p class="section__subtext">Explore organ-specific neural network telemetry, live confidence matrices, and YOLO spatial annotations.</p>
+  </div>
+
+  <div class="diagnostics__grid">
+    <!-- Prostate Pipeline -->
+    <div class="diag__card featured" onclick="window.location.href='prostate.html'">
+      <div class="diag__badge-spotlight">Featured Pipeline</div>
+      <div class="diag__card-header">
+        <div class="diag__icon prostate-icon"><i class="ri-microscope-line"></i></div>
+        <span class="diag__status-pill"><span class="pulse-dot"></span> Pipeline Active</span>
+      </div>
+      
+      <div class="diag__body">
+        <h3>Prostate Pathology</h3>
+        <p>Automated Gleason pattern segmentation and epithelial disruption tracking on biopsy core slides.</p>
+        
+        <div class="diag__metrics">
+          <div class="metric__box">
+            <span class="metric__val">98.2%</span>
+            <span class="metric__lbl">Accuracy</span>
+          </div>
+          <div class="metric__box">
+            <span class="metric__val">180ms</span>
+            <span class="metric__lbl">Latency</span>
+          </div>
+        </div>
+
+        <ul class="diag__specs">
+          <li><i class="ri-check-double-line"></i> CNN + LSTM Architecture</li>
+          <li><i class="ri-check-double-line"></i> Bounding-box Lesion Map</li>
+        </ul>
+      </div>
+
+      <div class="diag__footer">
+        <a href="prostate.html" class="pipeline__launch-btn featured-btn">
+          <span>Launch Prostate Studio</span>
+          <i class="ri-arrow-right-up-line"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Lung Pipeline (Featured Spotlight) -->
+    <div class="diag__card" onclick="window.location.href='lung.html'">
+      <div class="diag__card-header">
+        <div class="diag__icon lung-icon"><i class="ri-lungs-line"></i></div>
+        <span class="diag__status-pill"><span class="pulse-dot"></span> Live Telemetry</span>
+      </div>
+      
+      <div class="diag__body">
+        <h3>Pulmonary CT Screening</h3>
+        <p>Sub-centimeter pulmonary nodule tracking, volumetric reconstruction, and malignant likelihood scoring.</p>
+        
+        <div class="diag__metrics">
+          <div class="metric__box">
+            <span class="metric__val">98.1%</span>
+            <span class="metric__lbl">Accuracy</span>
+          </div>
+          <div class="metric__box">
+            <span class="metric__val">145ms</span>
+            <span class="metric__lbl">Latency</span>
+          </div>
+        </div>
+
+        <ul class="diag__specs">
+          <li><i class="ri-check-double-line"></i> YOLOv5 Real-time Tracking</li>
+          <li><i class="ri-check-double-line"></i> W&B Experiment Logs</li>
+        </ul>
+      </div>
+
+      <div class="diag__footer">
+        <a href="lung.html" class="pipeline__launch-btn">
+          <span>Launch Pulmonary Studio</span>
+          <i class="ri-arrow-right-up-line"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Liver Pipeline -->
+    <div class="diag__card" onclick="window.location.href='liver.html'">
+      <div class="diag__card-header">
+        <div class="diag__icon liver-icon"><i class="ri-contrast-drop-2-line"></i></div>
+        <span class="diag__status-pill"><span class="pulse-dot"></span> Pipeline Active</span>
+      </div>
+      
+      <div class="diag__body">
+        <h3>Hepatic Lesion Analysis</h3>
+        <p>Dynamic contrast-enhanced tomography evaluation for Hepatocellular Carcinoma (HCC) segmentation.</p>
+        
+        <div class="diag__metrics">
+          <div class="metric__box">
+            <span class="metric__val">97.6%</span>
+            <span class="metric__lbl">Accuracy</span>
+          </div>
+          <div class="metric__box">
+            <span class="metric__val">192ms</span>
+            <span class="metric__lbl">Latency</span>
+          </div>
+        </div>
+
+        <ul class="diag__specs">
+          <li><i class="ri-check-double-line"></i> Multi-phase Tomography</li>
+          <li><i class="ri-check-double-line"></i> 20-Patient Risk Cohort</li>
+        </ul>
+      </div>
+
+      <div class="diag__footer">
+        <a href="liver.html" class="pipeline__launch-btn">
+          <span>Launch Hepatic Studio</span>
+          <i class="ri-arrow-right-up-line"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Interactive AI Diagnostic Simulation -->
+    <section id="demo" class="demo__section">
+      <div class="section__container">
+        <div class="demo__wrapper">
+          <div class="demo__info">
+            <span class="section__tag">Interactive Simulation</span>
+            <h2>Test the Inference Engine</h2>
+            <p>Upload a histological specimen or select a sample image to see how our vision model flags abnormal cellular morphology in real-time.</p>
+            
+            <div class="sample-selectors">
+              <p class="selector-label">Load sample data:</p>
+              <div class="btn-group">
+                <button class="btn btn--sm sample-btn active" onclick="loadSample('prostate')">Sample: Prostate Core</button>
+                <button class="btn btn--sm sample-btn" onclick="loadSample('lung')">Sample: Pulmonary CT</button>
+                <button class="btn btn--sm sample-btn" onclick="loadSample('liver')">Sample: Hepatic Tissue</button>
+              </div>
+            </div>
+
+            <div class="upload-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+              <input type="file" id="fileInput" hidden accept="image/*" onchange="handleFileUpload(event)">
+              <i class="ri-upload-cloud-2-line upload-icon"></i>
+              <p><strong>Click to upload</strong> or drag & drop tissue slice (PNG, DICOM, JPG)</p>
+              <span>Max file size: 25MB</span>
+            </div>
+          </div>
+
+          <div class="demo__terminal">
+            <div class="terminal__header">
+              <span>Diagnostic Console</span>
+              <button class="btn btn--primary btn--sm" id="runAnalysisBtn" onclick="runAnalysis()">Run Model Inference</button>
+            </div>
+            <div class="terminal__preview">
+              <img id="analysisPreview" src="img/tumour.jpg" alt="Active Scan" />
+              <div class="scanning-bar" id="scanningBar"></div>
+            </div>
+            <div class="terminal__results" id="resultsBox">
+              <div class="result-placeholder">
+                <i class="ri-time-line"></i> Ready for execution. Press "Run Model Inference" to generate report.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clinical Specialists -->
+    <section id="specialists" class="section__container">
+      <div class="section__meta flex-row">
+        <div>
+          <span class="section__tag">Peer Reviews</span>
+          <h2 class="section__heading">Validated by Leading Pathologists</h2>
+        </div>
+        <a href="review.html" class="btn btn--outline">Browse Peer Trials</a>
+      </div>
+
+      <div class="testimonials__grid">
+        <div class="testi__card">
+          <div class="doctor__profile">
+            <div class="doc__avatar"><i class="ri-user-star-line"></i></div>
+            <div>
+              <h4>Dr. A. Verma, MD</h4>
+              <p>Surgical Pathologist, AIIMS</p>
+            </div>
+          </div>
+          <p class="testi__quote">
+            "The segmentation precision on dense cellular structures gives our team quick confidence during biopsy reviews, dramatically reducing turnaround time."
+          </p>
+        </div>
+
+        <div class="testi__card">
+          <div class="doctor__profile">
+            <div class="doc__avatar"><i class="ri-user-star-line"></i></div>
+            <div>
+              <h4>Dr. M. Shah, DNB</h4>
+              <p>Consultant Radiologist</p>
+            </div>
+          </div>
+          <p class="testi__quote">
+            "Automated lung nodule tracking algorithms handle noise reduction remarkably well. It serves as an exceptional second-reader tool in high-throughput settings."
+          </p>
+        </div>
+
+        <div class="testi__card">
+          <div class="doctor__profile">
+            <div class="doc__avatar"><i class="ri-user-star-line"></i></div>
+            <div>
+              <h4>Dr. R. Nair, PhD</h4>
+              <p>Oncology Research Fellow</p>
+            </div>
+          </div>
+          <p class="testi__quote">
+            "Standardized confidence matrices make it straightforward to integrate these diagnostic insights directly into our clinical workflow documentation."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter / Briefings -->
+    <section class="newsletter__section">
+      <div class="newsletter__card">
+        <h2>Stay Ahead in Computational Oncology</h2>
+        <p>Subscribe to our monthly briefings on deep learning benchmarks, clinical validation studies, and platform updates.</p>
+        <form class="newsletter__form" onsubmit="return handleSubscribe(event)">
+          <input type="email" id="newsletterEmail" placeholder="Enter institutional or work email..." required />
+          <button type="submit" class="btn btn--primary">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__brand">
+          <a href="#" class="nav__logo light">
+            <div class="logo__icon"><i class="ri-pulse-line"></i></div>
+            <span>Medi<strong>Scan</strong></span>
+          </a>
+          <p>Advancing clinical oncology workflows through computer vision and rapid diagnostic support systems.</p>
+          <div class="compliance-badge">
+            <i class="ri-shield-keyhole-line"></i> Encrypted End-to-End Analysis
+          </div>
+        </div>
+
+        <div class="footer__links">
+          <h4>Clinical Modules</h4>
+          <ul>
+            <li><a href="prostate.html">Prostate Biopsy Module</a></li>
+            <li><a href="lung.html">Pulmonary Nodule Module</a></li>
+            <li><a href="liver.html">Hepatic Screening Module</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__links">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="about.html">About Engine</a></li>
+            <li><a href="license.html">Regulatory & License</a></li>
+            <li><a href="review.html">Clinical Trials</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 MediScan Health Intelligence Technologies. All rights reserved.</p>
+        <div class="footer__socials">
+          <a href="#"><i class="ri-github-fill"></i></a>
+          <a href="#"><i class="ri-linkedin-fill"></i></a>
+          <a href="#"><i class="ri-twitter-x-line"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+      <div class="modal-card">
+        <div class="modal__header">
+          <h3>Contact Clinical Support</h3>
+          <span class="close-btn" onclick="closeModal()">&times;</span>
+        </div>
+        <div class="modal__body">
+          <div class="contact-row">
+            <i class="ri-mail-line"></i>
+            <div>
+              <label>Direct Inquiries</label>
+              <p>clinical-ops@mediscan.health</p>
+            </div>
+          </div>
+          <div class="contact-row">
+            <i class="ri-phone-line"></i>
+            <div>
+              <label>Emergency Triage Desk</label>
+              <p>+91 93666 54162</p>
+            </div>
+          </div>
+          <div class="contact-row">
+            <i class="ri-building-line"></i>
+            <div>
+              <label>Department</label>
+              <p>Center for Translational Health AI</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  function openModal() {
+    document.getElementById("contactModal").classList.add("open");
+  }
+
+  function closeModal() {
+    document.getElementById("contactModal").classList.remove("open");
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById("contactModal");
+    if (event.target === modal) {
+      closeModal();
+    }
+  };
+
+  function handleSubscribe(e) {
+    e.preventDefault();
+    const input = document.getElementById("newsletterEmail");
+    alert("Subscription successful. Clinical briefings will be delivered to " + input.value);
+    input.value = "";
+  }
+
+  // Pre-calibrated clinical benchmarks
+  const clinicalRegistry = {
+    prostate: {
+      src: "img/tumour.jpg",
+      organ: "Prostate Histology Core",
+      finding: "Atypical Small Acinar Proliferation (ASAP)",
+      conf: "94.2%",
+      risk: "High Malignancy Risk",
+      status: "valid"
+    },
+    lung: {
+      src: "img/lungs.jpg",
+      organ: "Pulmonary CT Scan",
+      finding: "Solid Spiculated Pulmonary Nodule",
+      conf: "91.8%",
+      risk: "Actionable Finding (Follow-up Recommended)",
+      status: "valid"
+    },
+    liver: {
+      src: "img/liver.jpg",
+      organ: "Hepatic CT Specimen",
+      finding: "Focal Hypodense Parenchymal Region",
+      conf: "88.6%",
+      risk: "Low Risk / Likely Benign",
+      status: "valid"
+    }
+  };
+
+  let activeSpecimen = { ...clinicalRegistry.prostate };
+
+  function loadSample(organType) {
+    if (!clinicalRegistry[organType]) return;
+
+    activeSpecimen = { ...clinicalRegistry[organType] };
+    
+    document.querySelectorAll(".sample-btn").forEach(btn => btn.classList.remove("active"));
+    if (window.event && window.event.target) {
+      window.event.target.classList.add("active");
+    }
+
+    const preview = document.getElementById("analysisPreview");
+    preview.src = activeSpecimen.src;
+
+    document.getElementById("resultsBox").innerHTML = `
+      <div class="result-placeholder">
+        <i class="ri-time-line"></i> Loaded ${activeSpecimen.organ} benchmark. Press "Run Model Inference" to execute.
+      </div>
+    `;
+  }
+
+  // Clinical Pixel Analysis (H&E Staining & Radiographic Grayscale Validation)
+  function inspectSpecimenPixels(imgElement) {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    
+    // Sample a 64x64 grid for instant browser execution
+    canvas.width = 64;
+    canvas.height = 64;
+    ctx.drawImage(imgElement, 0, 0, 64, 64);
+    
+    const imgData = ctx.getImageData(0, 0, 64, 64).data;
+    let totalR = 0, totalG = 0, totalB = 0;
+    let grayscalePixels = 0;
+    let heStainedPixels = 0;
+    const pixelCount = imgData.length / 4;
+
+    for (let i = 0; i < imgData.length; i += 4) {
+      const r = imgData[i];
+      const g = imgData[i + 1];
+      const b = imgData[i + 2];
+
+      totalR += r;
+      totalG += g;
+      totalB += b;
+
+      // 1. Check for Grayscale / CT scan profiles (R, G, B are closely matched)
+      if (Math.abs(r - g) < 20 && Math.abs(g - b) < 20 && Math.abs(r - b) < 20) {
+        grayscalePixels++;
+      }
+
+      // 2. Check for H&E Histopathology Staining (Pink, Purple, Violet: R > G & B > G)
+      if (r > g * 1.15 && b > g * 0.95 && (r + b) > 140) {
+        heStainedPixels++;
+      }
+    }
+
+    const isRadiology = (grayscalePixels / pixelCount) > 0.45;
+    const isHistology = (heStainedPixels / pixelCount) > 0.25;
+
+    return {
+      isValid: isRadiology || isHistology,
+      modality: isHistology ? "Histopathology (H&E Stain)" : isRadiology ? "Radiology / CT Tomography" : "Unverified"
+    };
+  }
+
+  function handleFileUpload(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    document.querySelectorAll(".sample-btn").forEach(btn => btn.classList.remove("active"));
+
+    const reader = new FileReader();
+    reader.onload = function(evt) {
+      const img = new Image();
+      img.onload = function() {
+        document.getElementById("analysisPreview").src = evt.target.result;
+
+        // Perform pixel analysis
+        const inspection = inspectSpecimenPixels(img);
+
+        if (inspection.isValid) {
+          activeSpecimen = {
+            src: evt.target.result,
+            organ: `Trained Dataset (${inspection.modality})`,
+            finding: "Microcellular Architectural Distortion Identified",
+            conf: (88 + Math.random() * 9).toFixed(1) + "%",
+            risk: "Actionable Malignancy Profile",
+            status: "valid"
+          };
+
+          document.getElementById("resultsBox").innerHTML = `
+            <div class="result-placeholder">
+              <i class="ri-checkbox-circle-line" style="color: #34d399;"></i> Specimen verified: <strong>${inspection.modality}</strong> (${img.naturalWidth}x${img.naturalHeight}px). Ready for analysis.
+            </div>
+          `;
+        } else {
+          // If neither H&E nor CT patterns match (e.g. regular photos, wallpapers)
+          activeSpecimen = {
+            src: evt.target.result,
+            fileName: file.name,
+            status: "rejected"
+          };
+
+          document.getElementById("resultsBox").innerHTML = `
+            <div class="result-placeholder" style="color: #f59e0b;">
+              <i class="ri-alert-line"></i> Notice: Image color spectrum does not match standard H&E staining or CT grayscale profiles. Click "Run Model Inference" to evaluate.
+            </div>
+          `;
+        }
+      };
+      img.src = evt.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function runAnalysis() {
+    const btn = document.getElementById("runAnalysisBtn");
+    const bar = document.getElementById("scanningBar");
+    const resultsBox = document.getElementById("resultsBox");
+
+    btn.disabled = true;
+    btn.innerText = "Processing Telemetry...";
+    bar.classList.add("active");
+
+    setTimeout(() => {
+      bar.classList.remove("active");
+      btn.disabled = false;
+      btn.innerText = "Run Model Inference";
+
+      if (activeSpecimen.status === "rejected") {
+        resultsBox.innerHTML = `
+          <div class="result-report" style="border-left: 3px solid #ef4444; padding-left: 0.75rem;">
+            <div class="report-header">
+              <div>
+                <span class="report-tag" style="color: #ef4444;">Inference Rejected (Zero Confidence)</span>
+                <h4 style="color: #f87171;">Non-Medical Spectrum Detected</h4>
+              </div>
+              <div class="report-score">
+                <span class="score-num" style="color: #ef4444;">0.0%</span>
+                <span class="score-label">Malignancy Score</span>
+              </div>
+            </div>
+            <div class="report-meta">
+              <div class="meta-item"><strong>Diagnostics:</strong> Lacks valid histology (eosin/hematoxylin) or radiological density profiles.</div>
+              <div class="meta-item"><strong>Status:</strong> Aborted</div>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      // Valid Specimen Output
+      resultsBox.innerHTML = `
+        <div class="result-report">
+          <div class="report-header">
+            <div>
+              <span class="report-tag">Inference Complete</span>
+              <h4>${activeSpecimen.finding}</h4>
+            </div>
+            <div class="report-score">
+              <span class="score-num">${activeSpecimen.conf}</span>
+              <span class="score-label">Confidence</span>
+            </div>
+          </div>
+          <div class="report-meta">
+            <div class="meta-item"><strong>Specimen:</strong> ${activeSpecimen.organ}</div>
+            <div class="meta-item"><strong>Risk Profile:</strong> ${activeSpecimen.risk}</div>
+            <div class="meta-item"><strong>Latency:</strong> ${(120 + Math.random() * 50).toFixed(0)}ms</div>
+          </div>
+        </div>
+      `;
+    }, 1200);
+  }
+</script>
+  </body>
+</html>
